@@ -1,7 +1,6 @@
 ---
 import "../assets/app.css";
 import ProfileLogo from "../assets/Profile-logo.jpg";
-import Image from "astro/components/Image.astro";
 ---
 
 <!doctype html>
@@ -20,7 +19,7 @@ import Image from "astro/components/Image.astro";
           <a href="/" class="btn pl-0 btn-ghost text-xl">
             <div class="avatar">
               <div class="w-10 rounded">
-                <Image src={ProfileLogo} alt="Profile Logo" />
+                <img src={ProfileLogo.src} alt="Profile Logo" />
               </div>
             </div>Magnus Granno</a
           >
