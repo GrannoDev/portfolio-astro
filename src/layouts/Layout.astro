@@ -45,7 +45,9 @@ import ProfileLogo from "../assets/Profile-logo.jpg";
               ></path>
             </svg>
           </button>
-          <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-200 rounded-box z-1 mt-3 w-40 p-2 shadow">
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content rounded-t-none bg-base-200 rounded-box z-1 mt-3 w-40 p-2 shadow">
             <li>
               <a class="btn bth-ghost" href="#career"> Career </a>
               <a class="btn bth-ghost" href="#skill-list"> Skills </a>
@@ -60,8 +62,9 @@ import ProfileLogo from "../assets/Profile-logo.jpg";
     <footer
       class="footer sm:footer-horizontal bg-base-200 backdrop-blur-lg opacity-80 shadow-lg text-neutral-content items-center p-4">
       <div class="container mx-auto footer sm:footer-horizontal items-center max-md:place-items-center">
-        <aside class="grid-flow-col items-center">
-          <p>Copyright © {new Date().getFullYear()}</p>
+        <aside class="grid-flow-col items-center max-md:text-center">
+          <p>&copy; {new Date().getFullYear()} Magnus Granno. All Rights Reserved.</p>
+          <!-- <p>Copyright © {new Date().getFullYear()}</p> -->
         </aside>
         <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
           <a href="https://x.com/magnus_granno" target="_blank">
