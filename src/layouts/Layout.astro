@@ -8,7 +8,7 @@ import ProfileLogo from "../assets/Profile-logo.jpg";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png+xml" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Magnus Granno</title>
   </head>
@@ -16,101 +16,104 @@ import ProfileLogo from "../assets/Profile-logo.jpg";
     <header class="flex justify-center z-50 bg-base-200 fixed w-full backdrop-blur-lg shadow-lg opacity-80">
       <div class="navbar bg-base-200 container shadow-sm">
         <div class="flex-1">
-          <a href="/" class="btn pl-0 btn-ghost text-xl">
-            <div class="avatar">
-              <div class="w-10 rounded">
-                <img src={ProfileLogo.src} alt="Profile Logo" />
-              </div>
-            </div>Magnus Granno
-          </a>
-        </div>
-        <div class="flex-none max-sm:hidden">
-          <ul class="menu menu-horizontal px-1">
-            <li><a href="#career">Career</a></li>
-            <li><a href="#skill-list">Skills</a></li>
-            <li><a href="#about">About</a></li>
-          </ul>
-        </div>
-        <div class="dropdown dropdown-end sm:hidden">
-          <button tabindex="0" class="btn btn-square btn-ghost">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              class="inline-block h-5 w-5 stroke-current">
+          <a href="#hero" class="btn btn-ghost text-xl">
+            <svg width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" y="0.5" width="59" height="59" stroke="white"></rect>
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z">
+                d="M19.216 19.464C19.216 20.36 19.488 21.304 20.032 22.296C20.608 23.288 20.896 24.328 20.896 25.416C20.896 26.504 20.768 27.432 20.512 28.2C20.256 28.968 19.824 29.624 19.216 30.168C19.792 30.744 20.208 31.448 20.464 32.28C20.752 33.08 20.896 33.976 20.896 34.968C20.896 35.992 20.608 37.032 20.032 38.088C19.488 39.112 19.216 40.056 19.216 40.92C19.216 41.176 19.36 41.464 19.648 41.784C19.968 42.072 20.432 42.216 21.04 42.216H23.056L23.68 47.016H20.896C18.528 47.016 16.8 46.456 15.712 45.336C14.624 44.216 14.08 42.744 14.08 40.92C14.08 40.44 14.16 39.816 14.32 39.048C14.512 38.28 14.752 37.544 15.04 36.84C15.168 36.392 15.296 35.96 15.424 35.544C15.584 35.096 15.664 34.712 15.664 34.392C15.664 33.752 15.456 33.24 15.04 32.856C14.624 32.472 14.16 32.28 13.648 32.28H11.488V28.152H13.648C14.16 28.152 14.624 27.96 15.04 27.576C15.456 27.192 15.664 26.68 15.664 26.04C15.664 25.72 15.584 25.32 15.424 24.84C15.296 24.36 15.136 23.848 14.944 23.304C14.72 22.664 14.512 21.992 14.32 21.288C14.16 20.584 14.08 19.96 14.08 19.416C14.08 17.592 14.624 16.136 15.712 15.048C16.8 13.928 18.528 13.368 20.896 13.368H23.68L23.056 18.168H21.04C20.432 18.168 19.968 18.328 19.648 18.648C19.36 18.936 19.216 19.208 19.216 19.464ZM39.8736 40.92C39.8736 40.024 39.6016 39.08 39.0576 38.088C38.5136 37.096 38.2416 36.056 38.2416 34.968C38.2416 33.912 38.3696 32.984 38.6256 32.184C38.8816 31.384 39.3136 30.728 39.9216 30.216C39.3456 29.64 38.9136 28.952 38.6256 28.152C38.3696 27.32 38.2416 26.408 38.2416 25.416C38.2416 24.392 38.5136 23.368 39.0576 22.344C39.6016 21.288 39.8736 20.328 39.8736 19.464C39.8736 19.208 39.7296 18.936 39.4416 18.648C39.1536 18.328 38.7056 18.168 38.0976 18.168H36.0816L35.5536 13.368H38.2416C40.5776 13.368 42.3056 13.928 43.4256 15.048C44.5776 16.136 45.1536 17.592 45.1536 19.416C45.1536 19.928 45.0416 20.568 44.8176 21.336C44.6256 22.104 44.4016 22.84 44.1456 23.544C44.0176 23.992 43.8736 24.44 43.7136 24.888C43.5856 25.336 43.5216 25.72 43.5216 26.04C43.5216 26.648 43.7136 27.16 44.0976 27.576C44.5136 27.96 44.9776 28.152 45.4896 28.152H47.6496V32.232H45.4896C44.9776 32.232 44.5136 32.424 44.0976 32.808C43.7136 33.192 43.5216 33.72 43.5216 34.392C43.5216 34.808 43.6016 35.24 43.7616 35.688C43.9536 36.104 44.1136 36.568 44.2416 37.08C44.4336 37.688 44.6256 38.36 44.8176 39.096C45.0416 39.8 45.1536 40.408 45.1536 40.92C45.1536 42.744 44.5776 44.216 43.4256 45.336C42.3056 46.456 40.5776 47.016 38.2416 47.016H35.5536L36.0816 42.216H38.0976C38.7056 42.216 39.1536 42.072 39.4416 41.784C39.7296 41.464 39.8736 41.176 39.8736 40.92Z"
+                fill="white">
               </path>
             </svg>
-          </button>
-          <ul
-            tabindex="0"
-            class="menu menu-sm dropdown-content rounded-t-none bg-base-200 rounded-box z-1 mt-3 w-40 p-2 shadow">
-            <li>
-              <a class="btn bth-ghost" href="#career">Career</a>
-              <a class="btn bth-ghost" href="#skill-list">Skills</a>
-              <a class="btn bth-ghost" href="#about">About</a>
-            </li>
-          </ul>
+            <span>Magnus Granno</span>
+          </a>
         </div>
+      </div>
+      <div class="flex-none max-sm:hidden">
+        <ul class="menu menu-horizontal px-1">
+          <li><a href="#career">Career</a></li>
+          <li><a href="#skill-list">Skills</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div class="dropdown dropdown-end sm:hidden">
+        <button tabindex="0" class="btn btn-square btn-ghost">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            class="inline-block h-5 w-5 stroke-current">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z">
+            </path>
+          </svg>
+        </button>
+        <ul
+          tabindex="0"
+          class="menu menu-sm dropdown-content rounded-t-none bg-base-200 rounded-box z-1 mt-3 w-40 p-2 shadow">
+          <li>
+            <a class="btn bth-ghost" href="#career">Career</a>
+            <a class="btn bth-ghost" href="#skill-list">Skills</a>
+            <a class="btn bth-ghost" href="#about">About</a>
+          </li>
+        </ul>
       </div>
     </header>
-    <main class="container mx-auto pb-32 lg:px-32 md:px-16 max-md:px-4 flex flex-col gap-32 lg:gap-64">
-      <slot />
-    </main>
-    <footer
-      class="footer sm:footer-horizontal bg-base-200 backdrop-blur-lg opacity-80 shadow-lg text-neutral-content items-center p-4">
-      <div class="container mx-auto footer sm:footer-horizontal items-center max-md:place-items-center">
-        <aside class="grid-flow-col items-center max-md:text-center">
-          <p>&copy; {new Date().getFullYear()} Magnus Granno. All Rights Reserved.</p>
-        </aside>
-        <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-          <a href="https://x.com/magnus_granno" target="_blank">
-            <svg
-              class="fill-current"
-              role="img"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <title>X</title><path
-                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z">
-              </path>
-            </svg>
-          </a>
-          <a href="https://bsky.app/profile/grannodev.bsky.social" target="_blank">
-            <svg
-              class="fill-current"
-              role="img"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <title>Bluesky</title><path
-                d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z">
-              </path>
-            </svg>
-          </a>
-          <a href="https://github.com/GrannoDev" target="_blank">
-            <svg
-              class="fill-current"
-              width="24"
-              height="24"
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <title>GitHub</title><path
-                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
-              </path>
-            </svg>
-          </a>
-        </nav>
-      </div>
-    </footer>
   </body>
+  <main class="container mx-auto pb-32 lg:px-32 md:px-16 max-md:px-4 flex flex-col gap-32 lg:gap-64">
+    <slot />
+  </main>
+  <footer
+    class="footer sm:footer-horizontal bg-base-200 backdrop-blur-lg opacity-80 shadow-lg text-neutral-content items-center p-4">
+    <div class="container mx-auto footer sm:footer-horizontal items-center max-md:place-items-center">
+      <aside class="grid-flow-col items-center max-md:text-center">
+        <p>&copy; {new Date().getFullYear()} Magnus Granno. All Rights Reserved.</p>
+      </aside>
+      <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+        <a href="https://x.com/magnus_granno" target="_blank">
+          <svg
+            class="fill-current"
+            role="img"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <title>X</title><path
+              d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z">
+            </path>
+          </svg>
+        </a>
+        <a href="https://bsky.app/profile/grannodev.bsky.social" target="_blank">
+          <svg
+            class="fill-current"
+            role="img"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <title>Bluesky</title><path
+              d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z">
+            </path>
+          </svg>
+        </a>
+        <a href="https://github.com/GrannoDev" target="_blank">
+          <svg
+            class="fill-current"
+            width="24"
+            height="24"
+            role="img"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <title>GitHub</title><path
+              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+            </path>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </footer>
 </html>
 
 <style>
