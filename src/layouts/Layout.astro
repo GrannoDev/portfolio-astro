@@ -10,7 +10,7 @@ import ProfileLogo from "../assets/Profile-logo.jpg";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png+xml" href="/favicon-32x32.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>Magnus Granno | Portfolio</title>
+    <title>Magnus Granno</title>
   </head>
   <body class="bg-base-200 bg-cover bg-bottom">
     <header class="flex justify-center z-50 bg-base-200 fixed w-full backdrop-blur-lg shadow-lg opacity-80">
@@ -27,6 +27,7 @@ import ProfileLogo from "../assets/Profile-logo.jpg";
         <div class="flex-none max-sm:hidden">
           <ul class="menu menu-horizontal px-1">
             <li><a href="#career">Career</a></li>
+            <li><a href="#skill-list">Skills</a></li>
           </ul>
         </div>
         <div class="dropdown dropdown-end sm:hidden">
@@ -44,17 +45,16 @@ import ProfileLogo from "../assets/Profile-logo.jpg";
               ></path>
             </svg>
           </button>
-          <ul
-            tabindex="0"
-            class="menu menu-sm dropdown-content bg-base-200 rounded-box z-1 mt-3 w-fit p-2 shadow shadow-primary">
+          <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-200 rounded-box z-1 mt-3 w-40 p-2 shadow">
             <li>
-              <a href="#career"> Career </a>
+              <a class="btn bth-ghost" href="#career"> Career </a>
+              <a class="btn bth-ghost" href="#skill-list"> Skills </a>
             </li>
           </ul>
         </div>
       </div>
     </header>
-    <main class="container mx-auto flex flex-col gap-16">
+    <main class="container mx-auto pb-32 lg:px-32 md:px-16 max-md:px-4 flex flex-col gap-16">
       <slot />
     </main>
     <footer
