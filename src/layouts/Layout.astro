@@ -7,6 +7,10 @@ import "../assets/app.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Welcome to the personal website of Magnus Granno, Software Engineer. Explore my professional background, and insights."
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Magnus Granno</title>
@@ -30,13 +34,13 @@ import "../assets/app.css";
       </div>
       <div class="flex-none max-sm:hidden font-semibold">
         <ul class="menu menu-horizontal space-x-1 px-1">
-          <li><a class="btn btn-ghost" href="#career">Career</a></li>
-          <li><a class="btn btn-ghost" href="#skill-list">Skills</a></li>
-          <li><a class="btn btn-ghost" href="#about">About</a></li>
+          <li><a aria-label="Career section link" class="btn btn-ghost" href="#career">Career</a></li>
+          <li><a aria-label="Skills section link" class="btn btn-ghost" href="#skill-list">Skills</a></li>
+          <li><a aria-label="About section link" class="btn btn-ghost" href="#about">About</a></li>
         </ul>
       </div>
       <div class="dropdown relative dropdown-end sm:hidden">
-        <button tabindex="0" class="btn btn-square btn-ghost">
+        <button tabindex="0" aria-label="navigation menu button" class="btn btn-square btn-ghost">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -54,13 +58,13 @@ import "../assets/app.css";
           tabindex="0"
           class="menu menu-sm space-y-1 dropdown-content opacity-100 bg-base-100 rounded-t-none rounded-box z-1 mt-3 w-40 p-2 shadow">
           <li>
-            <a class="btn bth-ghost bg-base-100" href="#career">Career</a>
+            <a aria-label="Career section link" class="btn bth-ghost bg-base-100" href="#career">Career</a>
           </li>
           <li>
-            <a class="btn bth-ghost bg-base-100" href="#skill-list">Skills</a>
+            <a aria-label="Skills section link" class="btn bth-ghost bg-base-100" href="#skill-list">Skills</a>
           </li>
           <li>
-            <a class="btn bth-ghost bg-base-100" href="#about">About</a>
+            <a aria-label="About section link" class="btn bth-ghost bg-base-100" href="#about">About</a>
           </li>
         </ul>
       </div>
@@ -77,7 +81,7 @@ import "../assets/app.css";
       <p>&copy; {new Date().getFullYear()} Magnus Granno. All Rights Reserved.</p>
     </aside>
     <div class="grid-flow-col gap-4 h-full md:place-self-center md:justify-self-end">
-      <a href="https://x.com/magnus_granno" target="_blank">
+      <a href="https://x.com/magnus_granno" aria-label="X link" target="_blank">
         <svg
           class="fill-current"
           role="img"
@@ -90,7 +94,7 @@ import "../assets/app.css";
           </path>
         </svg>
       </a>
-      <a href="https://bsky.app/profile/grannodev.bsky.social" target="_blank">
+      <a href="https://bsky.app/profile/grannodev.bsky.social" aria-label="Bluesky link" target="_blank">
         <svg
           class="fill-current"
           role="img"
@@ -103,7 +107,7 @@ import "../assets/app.css";
           </path>
         </svg>
       </a>
-      <a href="https://github.com/GrannoDev" target="_blank">
+      <a href="https://github.com/GrannoDev" aria-label="Github link" target="_blank">
         <svg
           class="fill-current"
           width="24"
@@ -122,6 +126,6 @@ import "../assets/app.css";
 
 <style>
   body {
-    background: url("../assets/galaxy-background.png");
+    background: url("../assets/galaxy-background.webp");
   }
 </style>
