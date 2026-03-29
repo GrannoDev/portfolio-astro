@@ -1,20 +1,21 @@
----
-import Skills from "./Skills.astro";
----
-
 <div id="hero" class="hero bg-transparent min-h-screen">
-  <div class="hero-content pt-32 md:pt-16 xl:grid xl:grid-cols-2 max-xl:flex-col gap-16 text-center">
+  <div class="hero-content pt-32 md:pt-16 gap-16 text-center">
     <div class="max-w-md">
-      <h1 class="max-lg:text-4xl text-5xl font-bold">Full-Stack Software Developer</h1>
+      <h1 class="max-lg:text-4xl text-5xl font-bold"><span class="text-secondary">Full-Stack</span> Software Developer</h1>
       <p class="py-6">
-        I focus on building robust, scalable, and lightning-fast interfaces that delight users and deliver tangible
-        results. If you're looking for a developer obsessed with crafting superior, high-performance web experiences,
-        let's connect.
+        I focus on building robust, scalable, and lightning-fast interfaces that delight users and deliver tangible results. If you're
+        looking for a developer obsessed with crafting superior, high-performance web experiences, <span class="text-secondary">
+          let's connect.
+        </span>
       </p>
-      <a aria-label="Contact me by email" href="mailto:magnus@northtech.dk" class="btn btn-primary text-base-100">
-        Email Me
+      <a aria-label="Contact me by email" href="mailto:magnus@northtech.dk" class="btn btn-secondary btn-soft">
+        Email Me<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+          <path
+            d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z">
+          </path>
+        </svg>
       </a>
-      <a href="https://www.linkedin.com/in/magnus-granno-b965911bb" class="btn btn-ghost" target="_blank">
+      <a href="https://www.linkedin.com/in/magnus-granno-b965911bb" class="btn btn-link" target="_blank">
         <svg
           width="256"
           height="256"
@@ -29,6 +30,5 @@ import Skills from "./Skills.astro";
         </svg>
       </a>
     </div>
-    <Skills />
   </div>
 </div>

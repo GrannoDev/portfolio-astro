@@ -1,0 +1,73 @@
+export const siteConfig = {
+  name: "Magnus Granno",
+  url: "https://magnusgranno.com",
+  title: "Magnus Granno | Full-Stack Software Developer",
+  description:
+    "Magnus Granno is a Denmark-based full-stack software developer and front-end lead building fast, scalable web applications with Angular, TypeScript, Java, Node.js, and modern frontend tooling.",
+  locale: "en_US",
+  language: "en-US",
+  themeColor: "#070b14",
+  role: "Full-Stack Software Developer",
+  location: "Denmark",
+  employer: "Northtech Aps",
+  education: "Cphbusiness Academy",
+  image: "/og-image.svg",
+  email: "magnus@northtech.dk",
+  sameAs: [
+    "https://www.linkedin.com/in/magnus-granno-b965911bb",
+    "https://x.com/magnus_granno",
+    "https://bsky.app/profile/grannodev.bsky.social",
+    "https://github.com/GrannoDev",
+  ],
+  keywords: [
+    "Magnus Granno",
+    "full-stack software developer",
+    "software engineer portfolio",
+    "front-end lead",
+    "Angular developer",
+    "TypeScript developer",
+    "Java developer",
+    "Node.js developer",
+    "web performance",
+    "portfolio",
+    "Denmark developer",
+  ],
+  knowsAbout: [
+    "Full-stack web development",
+    "Front-end architecture",
+    "Angular",
+    "TypeScript",
+    "JavaScript",
+    "Java",
+    "Spring Boot",
+    "Node.js",
+    "SvelteKit",
+    "React",
+    "Tailwind CSS",
+    "PostgreSQL",
+    "SQLite",
+    "Docker",
+    "Web performance",
+    "User interface engineering",
+  ],
+  projects: [
+    {
+      name: "ClimbAlong",
+      url: "https://climbalong.com/",
+      description:
+        "Digital climbing platform with performant product experiences built using Angular, TypeScript, Java, and Spring Boot.",
+    },
+    {
+      name: "Silverball",
+      url: "https://silverball.dk/",
+      description:
+        "Danish gaming pub website focused on discoverability, branding, and a pinball-first customer experience.",
+    },
+    {
+      name: "Pirate Whist",
+      url: "https://piratewhist.netlify.app/",
+      description:
+        "Browser-based trick-taking card game built with SvelteKit, Tailwind CSS, DaisyUI, and IndexedDB-powered persistence.",
+    },
+  ],
+} as const;

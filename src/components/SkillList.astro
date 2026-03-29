@@ -1,10 +1,14 @@
 ---
-import BackEndSkills from "./BackEndSkills.astro";
-import FrontEndSkills from "./FrontEndSkills.astro";
+import BackEndSkills from './BackEndSkills.astro';
+import FrontEndSkills from './FrontEndSkills.astro';
 ---
 
-<section id="skill-list" class="container scroll-mt-20">
-  <h2 class="max-lg:text-2xl text-3xl mb-8 font-bold text-center w-fit mx-auto">Skills</h2>
+<section id="skill-list" class="container scroll-mt-20" aria-labelledby="skills-heading">
+  <h2 id="skills-heading" class="max-lg:text-2xl text-3xl mb-4 font-bold text-center text-secondary w-fit mx-auto">Skills</h2>
+  <p class="mx-auto mb-8 max-w-3xl text-center text-base-content/80">
+    My core stack spans front-end architecture, full-stack product development, and performance-focused web engineering across Angular,
+    TypeScript and modern CSS tooling.
+  </p>
   <div class="flex max-md:flex-col justify-center">
     <FrontEndSkills />
     <BackEndSkills />

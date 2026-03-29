@@ -1,71 +1,70 @@
----
+<section id="projects" class="container mx-auto w-full max-w-5xl scroll-mt-20" aria-labelledby="projects-heading">
+  <h2 id="projects-heading" class="max-lg:text-2xl text-3xl mb-4 w-fit mx-auto text-center font-bold text-secondary">Projects</h2>
+  <p class="mx-auto mb-8 max-w-3xl text-center text-base-content/80">
+    Selected projects across product engineering, marketing sites, and independent web applications. Each one reflects my focus on
+    performance, usability, and clear technical execution.
+  </p>
 
----
-
-<section
-  id="projects"
-  class="container scroll-mt-20 w-full max-w-screen-lg mx-auto"
->
-  <h2 class="max-lg:text-2xl text-3xl mb-8 font-bold text-center w-fit mx-auto">
-    Projects
-  </h2>
-
-  <div class="flex gap-2 justify-center flex-wrap">
-    <div class="card bg-base-300 w-96 shadow-sm">
+  <div class="flex flex-col justify-center gap-12">
+    <article class="card w-full bg-base-100">
       <div class="card-body">
-        <h2 class="card-title text-primary">ClimbAlong</h2>
+        <h3 class="card-title text-secondary">ClimbAlong</h3>
         <p>
-          Explore the world of climbing with ClimbAlong, a place where we
-          digitalize your climbing experience.
+          ClimbAlong is a digital climbing platform where I helped build performant user experiences and scalable application features with
+          Angular, TypeScript, Java, and Spring Boot.
         </p>
-        <p>(Currently employed as front-end lead)</p>
-        <ul class="list-inside text-secondary list-disc">
+        <ul class="list-inside list-disc text-secondary">
           <li>Angular</li>
-          <li>Typescript</li>
-          <li>Java / Spring boot</li>
+          <li>TypeScript</li>
+          <li>Java / Spring Boot</li>
         </ul>
         <div class="card-actions items-center justify-end">
           <a
             href="https://climbalong.com/"
             target="_blank"
-            class="btn btn-primary">Check it out!</a
-          >
+            rel="noopener noreferrer"
+            class="btn btn-secondary btn-soft"
+            aria-label="Visit the ClimbAlong website">
+            Check it out!
+          </a>
         </div>
       </div>
-    </div>
-    <div class="card bg-base-300 w-96 shadow-sm">
+    </article>
+    <article class="card w-full bg-base-100">
       <div class="card-body">
-        <h2 class="card-title text-primary">Silverball</h2>
+        <h3 class="card-title text-secondary">Silverball</h3>
         <p>
-          Silverball is a website for a gaming pub in Denmark, where the main
-          focus is on pinball machines.
+          Silverball is a Danish gaming pub website centered on pinball culture, built to support discoverability, branding, and a clear
+          content experience for visitors.
         </p>
-        <ul class="list-inside text-secondary list-disc">
-          <li>Svelte / Sveltekit</li>
-          <li>Typescript</li>
-          <li>Tailwindcss</li>
+        <ul class="list-inside list-disc text-secondary">
+          <li>Svelte / SvelteKit</li>
+          <li>TypeScript</li>
+          <li>Tailwind CSS</li>
         </ul>
         <div class="card-actions items-center justify-end">
           <a
             href="https://silverball.dk/"
             target="_blank"
-            class="btn btn-primary">Check it out!</a
-          >
+            rel="noopener noreferrer"
+            class="btn btn-secondary btn-soft"
+            aria-label="Visit the Silverball website">
+            Check it out!
+          </a>
         </div>
       </div>
-    </div>
-    <div class="card bg-base-300 w-96 shadow-sm">
+    </article>
+    <article class="card w-full bg-base-100">
       <div class="card-body">
-        <h2 class="card-title text-primary">Pirate Whist</h2>
+        <h3 class="card-title text-secondary">Pirate Whist</h3>
         <p>
-          Set sail on a card game adventure unlike any other! Pirate Whist is a
-          fast-paced trick-taking game where predicting your hand is just as
-          crucial as playing it.
+          Pirate Whist is a browser-based trick-taking card game I built with SvelteKit, Tailwind CSS, DaisyUI, and IndexedDB-powered local
+          persistence for a smooth in-browser game experience.
         </p>
 
-        <ul class="list-inside text-secondary list-disc">
-          <li>Svelte / Sveltekit</li>
-          <li>TailwindCSS / DaisyUI</li>
+        <ul class="list-inside list-disc text-secondary">
+          <li>Svelte / SvelteKit</li>
+          <li>Tailwind CSS / DaisyUI</li>
           <li>DexieJS / IndexedDB</li>
         </ul>
         <div class="card-actions items-center justify-end">
@@ -73,29 +72,24 @@
             href="https://github.com/GrannoDev/pirate-whist"
             class="btn btn-circle"
             target="_blank"
-            aria-label="Repository link"
-          >
-            <svg
-              class="fill-current"
-              width="24"
-              height="24"
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            rel="noopener noreferrer"
+            aria-label="Open the Pirate Whist GitHub repository">
+            <svg class="fill-current" width="24" height="24" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <title>GitHub</title><path
-                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-              >
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
               </path>
             </svg>
           </a>
           <a
             href="https://piratewhist.netlify.app/"
             target="_blank"
-            class="btn btn-primary">Check it out!</a
-          >
+            rel="noopener noreferrer"
+            class="btn btn-secondary btn-soft"
+            aria-label="Play Pirate Whist in the browser">
+            Check it out!
+          </a>
         </div>
       </div>
-    </div>
+    </article>
   </div>
 </section>

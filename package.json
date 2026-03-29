@@ -9,12 +9,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^6.6.4",
-    "@tailwindcss/vite": "^4.1.2",
-    "astro": "^5.16.15",
-    "tailwindcss": "^4.1.2"
+    "@astrojs/netlify": "^7.0.5",
+    "@tailwindcss/vite": "^4.2.2",
+    "astro": "^6.1.1",
+    "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
-    "daisyui": "^5.0.12"
+    "daisyui": "^5.5.19"
   }
 }
