@@ -64,6 +64,12 @@ export const siteConfig = {
         "Danish gaming pub website focused on discoverability, branding, and a pinball-first customer experience.",
     },
     {
+      name: "Knap & Hug",
+      url: "https://magnusgranno.com/#projects",
+      description:
+        "Web app for managing a fishing club — organizing trips, tracking catches, and staying connected with friends.",
+    },
+    {
       name: "Pirate Whist",
       url: "https://piratewhist.netlify.app/",
       description:

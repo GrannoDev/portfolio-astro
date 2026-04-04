@@ -1,0 +1,93 @@
+---
+import {Image} from 'astro:assets';
+import type {ImageMetadata} from 'astro';
+
+interface Props {
+  title: string;
+  description: string;
+  tech: string[];
+  image: ImageMetadata | null;
+  url: string;
+  github: string;
+  urlLabel: string;
+  index: number;
+}
+
+const {title, description, tech, image, url, github, urlLabel, index} = Astro.props;
+---
+
+<article
+  class="project-card group flex max-md:flex-col gap-5 border border-base-300/30 bg-base-200/20 p-4"
+  style={`animation-delay: ${index * 60}ms`}>
+  {
+    image && (
+      <div class="shrink-0 overflow-hidden rounded-md max-md:w-full md:w-44 md:h-28">
+        <Image
+          src={image}
+          alt={`${title} screenshot`}
+          width={500}
+          class="h-full w-full object-cover object-top  transition-transform duration-500 group-hover:scale-[1.03]"
+        />
+      </div>
+    )
+  }
+
+  <div class="flex flex-1 flex-col justify-between gap-3">
+    <div>
+      <h3 class="text-base font-semibold tracking-tight text-base-content">
+        {title}
+      </h3>
+      <p class="mt-1 text-sm leading-relaxed text-base-content/55">
+        {description}
+      </p>
+    </div>
+
+    <div class="flex max-sm:flex-col sm:items-end justify-between gap-3">
+      <div class="flex flex-wrap gap-1.5">
+        {tech.map((t) => <span class="border border-base-300/50 px-2 py-0.5 text-[11px] tracking-wide text-base-content/40">{t}</span>)}
+      </div>
+
+      <div class="flex shrink-0 items-center gap-2">
+        {
+          github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${title} on GitHub`}
+              class="btn btn-sm btn-square btn-ghost">
+              <svg class="size-3.5 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>GitHub</title>
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+            </a>
+          )
+        }
+        {
+          url && (
+            <a href={url} target="_blank" rel="noopener noreferrer" aria-label={urlLabel} class="btn btn-sm btn-soft btn-secondary">
+              {urlLabel}
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</article>
+
+<style>
+  .project-card {
+    animation: fade-up 0.4s ease-out both;
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
