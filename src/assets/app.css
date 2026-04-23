@@ -35,6 +35,24 @@
   --noise: 0;
 }
 
+@layer components {
+  .magic {
+    @apply inline-block text-transparent bg-clip-text
+         bg-[linear-gradient(to_right,var(--color-white)_50%,var(--color-gray-400)_50%)]
+         bg-size-[200%_100%] bg-position-[100%_0]
+         transition-[background-position] duration-500 ease-(--ease-text-fill)
+         hover:bg-position-[0_0];
+  }
+
+  .magic:hover {
+    background-position: left;
+  }
+}
+@theme {
+  --animate-magic: magic 0.3s ease-in-out;
+  --ease-text-fill: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .btn-soft {
   border-width: 1px;
   border-color: color-mix(in oklch, currentColor 20%, transparent);

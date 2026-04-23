@@ -44,7 +44,7 @@ const {title, description, tech, image, url, github, urlLabel, index} = Astro.pr
 
     <div class="flex max-sm:flex-col sm:items-end justify-between gap-3">
       <div class="flex flex-wrap gap-1.5">
-        {tech.map((t) => <span class="border border-base-300/50 px-2 py-0.5 text-[11px] tracking-wide text-base-content/40">{t}</span>)}
+        {tech.map((t) => <span class="border magic border-base-300 rounded-md select-none px-2 py-0.5 text-xs tracking-wide ">{t}</span>)}
       </div>
 
       <div class="flex shrink-0 items-center gap-2">
