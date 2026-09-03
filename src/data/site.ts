@@ -71,9 +71,9 @@ export const siteConfig = {
     },
     {
       name: "Pirate Whist",
-      url: "https://piratewhist.netlify.app/",
+      url: "https://piratewhist.com/",
       description:
-        "Browser-based trick-taking card game built with SvelteKit, Tailwind CSS, DaisyUI, and IndexedDB-powered persistence.",
+        "Mobile app for keeping whist scores straight — tracking rounds, tricks, and points. Built with React Native and Expo.",
     },
   ],
 } as const;
