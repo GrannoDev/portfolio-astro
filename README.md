@@ -1,12 +1,11 @@
 # Magnus Granno Portfolio
 
-Personal portfolio built with Astro, Tailwind CSS, and DaisyUI.
+Personal portfolio built with Astro and Tailwind CSS.
 
 ## Stack
 
 - Astro
 - Tailwind CSS
-- DaisyUI
 - Netlify adapter
 
 ## Local Development
@@ -19,7 +18,7 @@ pnpm dev
 ## Production Notes
 
 - Canonical production URL: `https://magnusgranno.com/`
-- Static SEO assets live in `public/robots.txt`, `public/sitemap.xml`, and `public/og-image.svg`
+- Static SEO assets live in `public/robots.txt`, `public/sitemap.xml`, and `public/og-image.png`
 - Core metadata and structured data inputs live in `src/data/site.ts`
 
 ## Scripts

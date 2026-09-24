@@ -11,6 +11,9 @@ importers:
       '@astrojs/netlify':
         specifier: ^7.0.5
         version: 7.0.5(@types/node@25.0.10)(astro@6.1.1(@netlify/blobs@10.7.4)(@types/node@25.0.10)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.0)(typescript@5.8.2)(yaml@2.8.2))(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.2)
+      '@fontsource-variable/schibsted-grotesk':
+        specifier: ^5.3.0
+        version: 5.3.0
       '@tailwindcss/vite':
         specifier: ^4.2.2
         version: 4.2.2(vite@7.3.1(@types/node@25.0.10)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.2))
@@ -20,10 +23,6 @@ importers:
       tailwindcss:
         specifier: ^4.2.2
         version: 4.2.2
-    devDependencies:
-      daisyui:
-        specifier: ^5.5.19
-        version: 5.5.19
 
 packages:
 
@@ -430,6 +429,9 @@ packages:
 
   '@fastify/busboy@3.2.0':
     resolution: {integrity: sha512-m9FVDXU3GT2ITSe0UaMA5rU3QkfC/UXtCU8y0gSN/GugTqtVldOBWIB5V6V3sbmenVZUIpU6f+mPEO2+m5iTaA==}
+
+  '@fontsource-variable/schibsted-grotesk@5.3.0':
+    resolution: {integrity: sha512-ndS6H/KICWANchlHF3q4UdZD+xrZ3Ji0rUobIuXlgvDUzDfqZDsVuXPXZb636nJZMHE9zZ9Fmwgqazm8hMB50Q==}
 
   '@humanwhocodes/momoa@2.0.4':
     resolution: {integrity: sha512-RE815I4arJFtt+FVeU1Tgp9/Xvecacji8w/V6XtXsWWH/wz/eNkNbhb+ny/+PlVZjV0rxQpRSQKNKE3lcktHEA==}
@@ -1645,9 +1647,6 @@ packages:
   csso@5.0.5:
     resolution: {integrity: sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
-
-  daisyui@5.5.19:
-    resolution: {integrity: sha512-pbFAkl1VCEh/MPCeclKL61I/MqRIFFhNU7yiXoDDRapXN4/qNCoMxeCCswyxEEhqL5eiTTfwHvucFtOE71C9sA==}
 
   data-uri-to-buffer@4.0.1:
     resolution: {integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==}
@@ -3898,6 +3897,8 @@ snapshots:
 
   '@fastify/busboy@3.2.0': {}
 
+  '@fontsource-variable/schibsted-grotesk@5.3.0': {}
+
   '@humanwhocodes/momoa@2.0.4': {}
 
   '@iarna/toml@2.2.5': {}
@@ -5286,8 +5287,6 @@ snapshots:
   csso@5.0.5:
     dependencies:
       css-tree: 2.2.1
-
-  daisyui@5.5.19: {}
 
   data-uri-to-buffer@4.0.1: {}
 

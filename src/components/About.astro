@@ -1,4 +1,6 @@
 ---
+import TextSection from './TextSection.astro';
+
 // --- Enter Your Birth Date Below ---
 const BIRTH_YEAR = 1997;
 const BIRTH_MONTH_INDEX = 6; // IMPORTANT: Month is 0-indexed (0=Jan, 1=Feb, ..., 11=Dec)
@@ -20,25 +22,10 @@ if (today < birthdayThisYear) {
 }
 ---
 
-<section id="about" class="container scroll-mt-20 w-full max-w-screen-lg mx-auto" aria-labelledby="about-heading">
-  <h2 id="about-heading" class="max-lg:text-2xl text-3xl mb-8 w-fit font-bold mx-auto text-secondary">About Me</h2>
-  <div class="flex flex-col p-4 gap-4 bg-base-100 items-center rounded-md w-full backdrop-blur-lg opacity-80">
-    <div class="flex items-end gap-4 mb-8">
-      <svg width="48" xmlns="http://www.w3.org/2000/svg" class="rounded-md inline" viewBox="0 0 37 28">
-        <path fill="#c8102e" d="M0 0h37v28H0Z"></path><path stroke="#fff" stroke-width="4" d="M0 14h37M14 0v28"></path>
-      </svg>
-      <span class="font-semibold text-2xl text-center">Magnus Granno - {age}</span>
-    </div>
-
-    <div class="max-w-3xl space-y-4">
-      <p class="text-center text-xl italic">
-        I&apos;m a full-stack software developer with a strong front-end focus, driven by clean implementation, fast interfaces, and
-        maintainable systems that support real product goals.
-      </p>
-      <p class="text-center text-base-content/80">
-        I care about continuous improvement, both in code and in craft. Outside of tech, I enjoy fishing, the gym, Marvel stories, and
-        gaming.
-      </p>
-    </div>
-  </div>
-</section>
+<TextSection id="about" title="About">
+  <p>
+    I&apos;m Magnus, {age}, based in Denmark. I care about clean implementation, fast interfaces and systems that stay maintainable
+    as a product grows.
+  </p>
+  <p class="text-muted">Away from the keyboard it&apos;s fishing, the gym, Marvel and games.</p>
+</TextSection>

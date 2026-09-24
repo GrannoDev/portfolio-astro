@@ -1,0 +1,49 @@
+---
+const roles = [
+  {
+    date: 'Now',
+    title: 'Front-end lead, Northtech',
+    description:
+      'Leading front-end work on ClimbAlong: Angular architecture, web performance, scalable UI systems and product experiences that feel fast and intuitive.',
+  },
+  {
+    date: '2023',
+    title: 'Full-stack developer, Northtech',
+    description:
+      'Building and shipping full-stack web applications across front-end and back-end, with hands-on work in TypeScript, Angular, Java, APIs and production-ready architecture.',
+  },
+  {
+    date: '2022',
+    title: 'Intern, Northtech',
+    description:
+      'Contributed to a visual redesign of ClimbAlong, improved the user experience and added new functionality, including scoreboard features.',
+  },
+  {
+    date: '2020',
+    title: 'Computer science, Cphbusiness Academy',
+    description:
+      'A practical, project-driven foundation in software engineering and building complete web applications for real use cases.',
+  },
+];
+---
+
+<section id="work" aria-labelledby="work-heading" class="page-section flex flex-col">
+  <div class="section-grid gap-1.5 border-b border-rule pb-4 md:items-baseline md:gap-6 md:pb-5">
+    <h2 id="work-heading" class="text-[17px] font-semibold lg:text-lg/normal lg:tracking-[-0.01em]">Work</h2>
+    <p class="text-base text-muted lg:text-lg/normal">Four years at Northtech, from intern to lead.</p>
+  </div>
+
+  <ol>
+    {
+      roles.map((role) => (
+        <li class="section-grid items-start gap-2 border-b border-rule py-6 md:gap-6 lg:py-9">
+          <p class="text-[15px] text-muted tabular-nums md:pt-1 lg:text-lg/normal">{role.date}</p>
+          <div class="flex flex-col gap-2 lg:gap-2.5">
+            <h3 class="text-[21px] leading-[1.2] font-medium tracking-[-0.015em] lg:text-2xl/[1.2]">{role.title}</h3>
+            <p class="max-w-[680px] text-base text-muted lg:text-lg/normal">{role.description}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</section>

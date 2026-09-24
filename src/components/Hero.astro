@@ -1,34 +1,20 @@
-<div id="hero" class="hero bg-transparent min-h-screen">
-  <div class="hero-content pt-32 md:pt-16 gap-16 text-center">
-    <div class="max-w-md">
-      <h1 class="max-lg:text-4xl text-5xl font-bold"><span class="text-secondary">Full-Stack</span> Software Developer</h1>
-      <p class="py-6">
-        I focus on building robust, scalable, and lightning-fast interfaces that delight users and deliver tangible results. If you're
-        looking for a developer obsessed with crafting superior, high-performance web experiences, <span class="text-secondary">
-          let's connect.
-        </span>
-      </p>
-      <a aria-label="Contact me by email" href="mailto:magnus@northtech.dk" class="btn btn-secondary btn-soft">
-        Contact Me<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
-          <path
-            d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z">
-          </path>
-        </svg>
-      </a>
-      <a href="https://www.linkedin.com/in/magnus-granno-b965911bb" class="btn btn-link" target="_blank">
-        <svg
-          width="256"
-          height="256"
-          xmlns="http://www.w3.org/2000/svg"
-          class="size-8 bg-white rounded"
-          preserveAspectRatio="xMidYMid"
-          viewBox="0 0 256 256">
-          <path
-            d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453"
-            fill="#0A66C2">
-          </path>
-        </svg>
-      </a>
-    </div>
+---
+import {siteConfig, profiles} from '../data/site';
+---
+
+<section id="top" aria-label="Introduction" class="page-section flex flex-col gap-9 pt-14 lg:gap-14 lg:pt-32">
+  <h1 class="max-w-[1120px] text-4xl/[1.1] font-medium tracking-[-0.03em] text-balance md:text-5xl/[1.1] lg:text-[64px] lg:leading-[1.06]">
+    Full-stack developer with a front-end focus. I lead front-end on <a href="https://climbalong.com/">ClimbAlong</a> at Northtech, building
+    fast, well-made web products from Denmark.
+  </h1>
+  <div class="flex flex-col items-start gap-3.5 text-[17px] font-medium md:flex-row md:gap-9 lg:text-[19px]">
+    <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+    {
+      [profiles.linkedin, profiles.github].map(({label, href}) => (
+        <a href={href} target="_blank" rel="me noopener noreferrer">
+          {label}
+        </a>
+      ))
+    }
   </div>
-</div>
+</section>

@@ -3,22 +3,16 @@ export const siteConfig = {
   url: "https://magnusgranno.com",
   title: "Magnus Granno | Full-Stack Software Developer",
   description:
-    "Magnus Granno is a Denmark-based full-stack software developer and front-end lead building fast, scalable web applications with Angular, TypeScript, Java, Node.js, and modern frontend tooling.",
+    "Magnus Granno is a full-stack developer with a front-end focus, leading front-end on ClimbAlong at Northtech and building fast, well-made web products from Denmark.",
   locale: "en_US",
   language: "en-US",
-  themeColor: "#070b14",
+  themeColor: "#EDEDE8",
   role: "Full-Stack Software Developer",
   location: "Denmark",
   employer: "Northtech Aps",
   education: "Cphbusiness Academy",
-  image: "/og-image.svg",
+  image: "/og-image.png",
   email: "magnus@northtech.dk",
-  sameAs: [
-    "https://www.linkedin.com/in/magnus-granno-b965911bb",
-    "https://x.com/magnus_granno",
-    "https://bsky.app/profile/grannodev.bsky.social",
-    "https://github.com/GrannoDev",
-  ],
   keywords: [
     "Magnus Granno",
     "full-stack software developer",
@@ -28,6 +22,8 @@ export const siteConfig = {
     "TypeScript developer",
     "Java developer",
     "Node.js developer",
+    "SvelteKit developer",
+    "React Native developer",
     "web performance",
     "portfolio",
     "Denmark developer",
@@ -45,35 +41,18 @@ export const siteConfig = {
     "React",
     "Tailwind CSS",
     "PostgreSQL",
-    "SQLite",
+    "Hono",
+    "React Native",
+    "Expo",
+    "Drizzle ORM",
     "Docker",
     "Web performance",
     "User interface engineering",
   ],
-  projects: [
-    {
-      name: "ClimbAlong",
-      url: "https://climbalong.com/",
-      description:
-        "Digital climbing platform with performant product experiences built using Angular, TypeScript, Java, and Spring Boot.",
-    },
-    {
-      name: "Silverball",
-      url: "https://silverball.dk/",
-      description:
-        "Danish gaming pub website focused on discoverability, branding, and a pinball-first customer experience.",
-    },
-    {
-      name: "Knap & Hug",
-      url: "https://magnusgranno.com/#projects",
-      description:
-        "Web app for managing a fishing club — organizing trips, tracking catches, and staying connected with friends.",
-    },
-    {
-      name: "Pirate Whist",
-      url: "https://piratewhist.com/",
-      description:
-        "Mobile app for keeping whist scores straight — tracking rounds, tricks, and points. Built with React Native and Expo.",
-    },
-  ],
+} as const;
+
+export const profiles = {
+  linkedin: {label: "LinkedIn", href: "https://www.linkedin.com/in/magnus-granno-b965911bb"},
+  github: {label: "GitHub", href: "https://github.com/GrannoDev"},
+  x: {label: "X", href: "https://x.com/magnus_granno"},
 } as const;

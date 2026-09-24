@@ -1,74 +1,13 @@
 ---
 import ProjectCard from './ProjectCard.astro';
-import climbalongImg from '../assets/climbalong.png';
-import silverballImg from '../assets/silverball.png';
-import sveltetodoImg from '../assets/sveltetodo.jpg';
-import knapoghugImg from '../assets/knapoghug.jpg';
-import socialpreviewImg from '../assets/socialpreview.webp';
-import piratewhistImg from '../assets/piratewhist.webp';
-
-const projects = [
-  {
-    title: 'ClimbAlong',
-    description: 'Digital climbing platform where I helped build performant user experiences and scalable application features.',
-    tech: ['Angular', 'TypeScript', 'Java / Spring Boot', 'Tailwind CSS', 'PostgreSQL'],
-    image: climbalongImg,
-    url: 'https://climbalong.com/',
-    github: '',
-    urlLabel: 'Visit site',
-  },
-  {
-    title: 'Silverball',
-    description: 'Danish gaming pub website centered on pinball culture, built for discoverability and a clear content experience.',
-    tech: ['Svelte / SvelteKit', 'TypeScript', 'Tailwind CSS', 'Firebase'],
-    image: silverballImg,
-    url: 'https://silverball.dk/',
-    github: '',
-    urlLabel: 'Check the site',
-  },
-  {
-    title: 'Pirate Whist',
-    description: 'Mobile app that keeps whist scores straight — tracking rounds, tricks, and points so the game stays about the cards, not the math.',
-    tech: ['React Native', 'Expo'],
-    image: piratewhistImg,
-    url: 'https://piratewhist.com/',
-    github: '',
-    urlLabel: 'Get the app',
-  },
-  {
-    title: 'Knap & Hug',
-    description: 'Web app for managing my fishing club with friends — organizing trips, tracking catches, and staying connected.',
-    tech: ['SvelteKit', 'TypeScript', 'Tailwind CSS', 'Convex', 'Better Auth'],
-    image: knapoghugImg,
-    url: 'https://knapoghug.com/',
-    github: '',
-    urlLabel: 'Take a look',
-  },
-  {
-    title: 'Social Preview Generator',
-    description: 'Chrome extension that helps you turn the page you are already viewing into a ready-to-use social sharing image.',
-    tech: ['Vite', 'Vitest', 'Typescript'],
-    image: socialpreviewImg,
-    url: 'https://chromewebstore.google.com/detail/social-preview-generator/ceefmkpcplokobniimmcdebakilgcekd',
-    github: 'https://github.com/GrannoDev/social-preview-generator/',
-    urlLabel: 'Check it out',
-  },
-  {
-    title: 'Todo List',
-    description: 'A simple yet effective todo list application built with modern web technologies and tested with Vitest.',
-    tech: ['Svelte / SvelteKit', 'Tailwind CSS', 'DexieJS', 'Vitest'],
-    image: sveltetodoImg,
-    url: 'https://svelte-todos-simple.netlify.app/',
-    github: 'https://github.com/GrannoDev/svelte-todo',
-    urlLabel: 'Try it out',
-  },
-];
+import {projects} from '../data/projects';
 ---
 
-<section id="projects" class="container mx-auto w-full max-w-5xl scroll-mt-20" aria-labelledby="projects-heading">
-  <h2 id="projects-heading" class="max-lg:text-2xl text-3xl mb-3 w-fit mx-auto text-center font-bold text-secondary">Projects</h2>
-
-  <div class="flex flex-col gap-3">
-    {projects.map((project, i) => <ProjectCard {...project} index={i} />)}
+<section id="projects" aria-labelledby="projects-heading" class="page-section flex flex-col">
+  <div class="section-grid items-baseline gap-1.5 border-b border-rule pb-4 md:gap-6 md:pb-5">
+    <h2 id="projects-heading" class="text-[17px] font-semibold tracking-[-0.01em] md:text-lg/normal">Projects</h2>
+    <p class="text-base text-muted md:text-lg/normal">Four things I have built or help build.</p>
   </div>
+
+  {projects.map((project) => <ProjectCard {...project} />)}
 </section>
