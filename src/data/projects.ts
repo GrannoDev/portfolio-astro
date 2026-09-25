@@ -1,5 +1,6 @@
 import type {ImageMetadata} from 'astro';
 import climbalongImg from '../assets/climbalong.png';
+import proclimbingImg from '../assets/proclimbing.webp';
 import silverballImg from '../assets/silverball.png';
 import piratewhistImg from '../assets/piratewhist.webp';
 import knapoghugImg from '../assets/knapoghug-logo.webp';
@@ -25,6 +26,17 @@ export const projects: Project[] = [
     linkLabel: 'climbalong.com',
     image: climbalongImg,
     imageAlt: 'ClimbAlong web app',
+  },
+  {
+    type: 'Web application, at Northtech',
+    title: 'Pro Climbing League',
+    description:
+      'Web application for a global climbing league. I built it end to end, including the qualification format, with content managed in Sanity.',
+    stack: 'SvelteKit, TypeScript, Sanity, PostHog',
+    url: 'https://www.proclimbing.com/',
+    linkLabel: 'proclimbing.com',
+    image: proclimbingImg,
+    imageAlt: 'Pro Climbing League qualification section',
   },
   {
     type: 'Website',
