@@ -1,4 +1,10 @@
+# Search engines, AI assistants and model training are all welcome.
+# Content signals: https://contentsignals.org
+
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
+
+# Plain-text profile for language models: https://magnusgranno.com/llms.txt
 
 Sitemap: https://magnusgranno.com/sitemap.xml

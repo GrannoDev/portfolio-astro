@@ -40,7 +40,7 @@ const schema = {
         '@id': `${siteConfig.url}/#education`,
       },
       knowsAbout: siteConfig.knowsAbout,
-      knowsLanguage: ['English', 'Danish'],
+      knowsLanguage: siteConfig.languages,
       sameAs: profileList.map((profile) => profile.href),
       mainEntityOfPage: {
         '@id': `${canonicalUrl}#webpage`,
@@ -127,6 +127,7 @@ const schema = {
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="alternate" type="text/markdown" href="/index.md" title={`${siteConfig.name} (Markdown)`} />
     {profileList.map((profile) => <link rel="me" href={profile.href} />)}
 
     <meta property="og:type" content="website" />

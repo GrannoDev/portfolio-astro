@@ -1,31 +1,9 @@
 ---
 import TextSection from './TextSection.astro';
-
-// --- Enter Your Birth Date Below ---
-const BIRTH_YEAR = 1997;
-const BIRTH_MONTH_INDEX = 6; // IMPORTANT: Month is 0-indexed (0=Jan, 1=Feb, ..., 11=Dec)
-const BIRTH_DAY = 4; // Day of the month (1-31)
-// ---------------------------------
-const today = new Date();
-const birthDate = new Date(BIRTH_YEAR, BIRTH_MONTH_INDEX, BIRTH_DAY);
-
-// Calculate the initial age difference in years
-let age = today.getFullYear() - birthDate.getFullYear();
-
-// Create a date object representing this year's birthday
-const birthdayThisYear = new Date(today.getFullYear(), BIRTH_MONTH_INDEX, BIRTH_DAY);
-
-// Check if the current date is *before* this year's birthday
-// If it is, the person hasn't had their birthday yet this year, so subtract 1 from the age.
-if (today < birthdayThisYear) {
-  age--;
-}
+import {about} from '../data/about';
 ---
 
 <TextSection id="about" title="About">
-  <p>
-    I&apos;m Magnus, {age}, based in Denmark. I care about clean implementation, fast interfaces and systems that stay maintainable
-    as a product grows.
-  </p>
-  <p class="text-muted">Away from the keyboard it&apos;s fishing, the gym, Marvel and games.</p>
+  <p>{about.intro} {about.focus}</p>
+  <p class="text-muted">{about.interests}</p>
 </TextSection>

@@ -13,6 +13,7 @@ export const siteConfig = {
   education: "Cphbusiness Academy",
   image: "/og-image.png",
   email: "magnus@northtech.dk",
+  languages: ["English", "Danish"],
   keywords: [
     "Magnus Granno",
     "fullstack software developer",
