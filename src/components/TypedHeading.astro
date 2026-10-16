@@ -9,5 +9,5 @@ interface Props {
 const {text, as: Tag = 'h2', id, class: className} = Astro.props;
 ---
 
-<!-- Kept on one line: whitespace between the spans would show up as gaps around the caret. -->
-<Tag id={id} class={className} data-typed={text}><span class="sr-only">{text}</span><span aria-hidden="true"><span data-typed-done></span><span class="caret"></span><span data-typed-rest>{text}</span></span></Tag>
+<!-- Kept on one line: whitespace between the text spans would render as spaces. -->
+<Tag id={id} class:list={['relative', className]} data-typed={text}><span class="sr-only">{text}</span><span aria-hidden="true"><span data-typed-done></span><span data-typed-rest>{text}</span></span><span class="caret" aria-hidden="true"></span></Tag>

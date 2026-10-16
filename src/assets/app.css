@@ -81,24 +81,19 @@
  * script in the layout only when motion is allowed, so without JS everything shows.
  */
 /*
- * The caret is a zero-width inline anchor with the block drawn outside the flow: an
- * inline-block with real width would add a line-break opportunity mid-word and widen the
- * line, so the last word on a line would wrap while the caret sits in it, then jump back.
+ * The caret sits outside the text flow and the motion script places it after the last
+ * typed character. Inside the flow it changed how lines wrap: it split the word being
+ * typed, and with balanced wrapping it fell onto an empty line below the heading.
  */
 .caret {
   display: none;
-  position: relative;
-}
-
-.caret::after {
-  content: '';
   position: absolute;
-  left: 0.06em;
-  top: 50%;
+  top: 0;
+  left: 0;
   width: 0.52em;
   height: 0.9em;
-  transform: translateY(-50%);
   background: var(--color-accent);
+  pointer-events: none;
 }
 
 .typing [data-typed-rest] {
@@ -106,7 +101,7 @@
 }
 
 .typing .is-active .caret {
-  display: inline;
+  display: block;
 }
 
 .typing .is-active.is-done .caret {

@@ -155,7 +155,7 @@ const schema = {
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <!-- Runs before paint so headings start hidden instead of flashing in full. -->
     <script is:inline>
-      if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if ('IntersectionObserver' in window && 'ResizeObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
         document.documentElement.classList.add('typing');
       }
     </script>

@@ -1,7 +1,7 @@
 /**
  * Types section headings out one at a time as they scroll into view, with a block caret
  * after the last character, and fades section bodies in. Runs only when the layout's
- * inline script has set `typing` on <html> (motion allowed, IntersectionObserver present).
+ * inline script has set `typing` on <html> (motion allowed, IntersectionObserver and ResizeObserver present).
  */
 
 interface Heading {
@@ -9,6 +9,7 @@ interface Heading {
   text: string;
   done: HTMLElement;
   rest: HTMLElement;
+  caret: HTMLElement;
 }
 
 const BASE_DELAY_MS = 34;
@@ -17,8 +18,9 @@ const PAUSE_BETWEEN_MS = 360;
 function toHeading(el: HTMLElement): Heading | undefined {
   const done = el.querySelector<HTMLElement>('[data-typed-done]');
   const rest = el.querySelector<HTMLElement>('[data-typed-rest]');
+  const caret = el.querySelector<HTMLElement>('.caret');
   const text = el.dataset.typed;
-  return done && rest && text ? {el, text, done, rest} : undefined;
+  return done && rest && caret && text ? {el, text, done, rest, caret} : undefined;
 }
 
 /** Uneven gaps read as a person typing: longer after spaces, longest after punctuation. */
@@ -29,9 +31,29 @@ function delayAfter(char: string) {
   return delay;
 }
 
+const CARET_GAP_EM = 0.06;
+
+/** Moves the caret just after the last typed character, centred on that character's line. */
+function placeCaret(heading: Heading) {
+  const typed = heading.done.firstChild;
+  if (!typed?.textContent) return;
+  const range = document.createRange();
+  range.setStart(typed, typed.textContent.length - 1);
+  range.setEnd(typed, typed.textContent.length);
+  const rects = range.getClientRects();
+  const char = rects[rects.length - 1];
+  if (!char) return;
+  const box = heading.el.getBoundingClientRect();
+  const fontSize = parseFloat(getComputedStyle(heading.el).fontSize);
+  const left = char.right - box.left + CARET_GAP_EM * fontSize;
+  const top = char.top - box.top + (char.height - heading.caret.offsetHeight) / 2;
+  heading.caret.style.transform = `translate(${left}px, ${top}px)`;
+}
+
 function show(heading: Heading, count: number) {
   heading.done.textContent = heading.text.slice(0, count);
   heading.rest.textContent = heading.text.slice(count);
+  if (heading.el.classList.contains('is-active')) placeCaret(heading);
 }
 
 function startTyping() {
@@ -93,6 +115,11 @@ function startTyping() {
     {rootMargin: '0px 0px -12% 0px'},
   );
   headings.forEach((heading) => observer.observe(heading.el));
+
+  // Rewrapping (resize, rotation, late font swap) resizes the heading and moves its last
+  // character, so the caret follows it.
+  const followText = new ResizeObserver(() => active && placeCaret(active));
+  headings.forEach((heading) => followText.observe(heading.el));
 }
 
 function startReveal() {
