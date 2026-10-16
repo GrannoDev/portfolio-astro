@@ -1,0 +1,26 @@
+---
+import Entry from './Entry.astro';
+import {tools} from '../data/about';
+import {packageName} from '../lib/package-name';
+
+const groups = [
+  {key: 'dependencies', note: 'most days', tools: tools.daily},
+  {key: 'devDependencies', note: 'side projects', tools: tools.sideProjects},
+];
+---
+
+<Entry as="section" id="deps" heading="What it runs on" class="pt-24 pb-12">
+  <span slot="meta">## dependencies</span>
+  <dl class="mt-4 flex flex-col gap-6 rounded-lg border border-rule bg-well p-6 font-mono text-sm/[1.7]">
+    {
+      groups.map((group) => (
+        <div class="flex flex-col gap-1">
+          <dt class="text-faint">
+            "{group.key}": <span>// {group.note}</span>
+          </dt>
+          <dd>{group.tools.map(packageName).join(', ')}</dd>
+        </div>
+      ))
+    }
+  </dl>
+</Entry>

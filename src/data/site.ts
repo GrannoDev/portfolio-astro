@@ -6,7 +6,7 @@ export const siteConfig = {
     "Magnus Granno is a fullstack developer with a frontend focus, leading frontend on ClimbAlong at Northtech and building fast, well-made web products from Denmark.",
   locale: "en_US",
   language: "en-US",
-  themeColor: "#EDEDE8",
+  themeColor: "#0D0E10",
   role: "Fullstack Software Developer",
   location: "Denmark",
   employer: "Northtech Aps",

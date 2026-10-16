@@ -1,17 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-import Projects from "../components/Projects.astro";
-import Work from "../components/Work.astro";
-import Tools from "../components/Tools.astro";
-import About from "../components/About.astro";
+import Changelog from "../components/Changelog.astro";
+import SideProjects from "../components/SideProjects.astro";
+import Dependencies from "../components/Dependencies.astro";
 import { siteConfig } from "../data/site";
 ---
 
 <Layout title={siteConfig.title} description={siteConfig.description} pathname="/">
   <Hero />
-  <Projects />
-  <Work />
-  <Tools />
-  <About />
+  <Changelog />
+  <SideProjects />
+  <Dependencies />
 </Layout>

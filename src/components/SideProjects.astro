@@ -1,0 +1,25 @@
+---
+import Entry from './Entry.astro';
+import {sideProjects} from '../data/projects';
+import {packageName} from '../lib/package-name';
+---
+
+<Entry as="section" id="side" heading="Things I build for fun" class="pt-24 pb-12">
+  <span slot="meta">## side-projects</span>
+  <ul class="mt-4 flex flex-col">
+    {
+      sideProjects.map((project) => (
+        <li class="flex flex-col gap-1 border-t border-rule-soft py-5">
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h3 class="font-medium">{project.title}</h3>
+            <a href={project.url} target="_blank" rel="noopener noreferrer" class="font-mono text-[13px]">
+              {project.linkLabel}
+            </a>
+          </div>
+          <p class="max-w-[62ch] text-body">{project.description}</p>
+          <p class="font-mono text-[13px] text-faint">{project.stack.map(packageName).join(' · ')}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Entry>
