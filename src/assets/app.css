@@ -80,12 +80,24 @@
  * Typing headings and fading section bodies. The `typing` class is set by an inline
  * script in the layout only when motion is allowed, so without JS everything shows.
  */
+/*
+ * The caret is a zero-width inline anchor with the block drawn outside the flow: an
+ * inline-block with real width would add a line-break opportunity mid-word and widen the
+ * line, so the last word on a line would wrap while the caret sits in it, then jump back.
+ */
 .caret {
   display: none;
+  position: relative;
+}
+
+.caret::after {
+  content: '';
+  position: absolute;
+  left: 0.06em;
+  top: 50%;
   width: 0.52em;
   height: 0.9em;
-  margin-left: 0.06em;
-  vertical-align: -0.08em;
+  transform: translateY(-50%);
   background: var(--color-accent);
 }
 
@@ -94,7 +106,7 @@
 }
 
 .typing .is-active .caret {
-  display: inline-block;
+  display: inline;
 }
 
 .typing .is-active.is-done .caret {
