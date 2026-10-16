@@ -1,24 +1,28 @@
 ---
+import TypedHeading from './TypedHeading.astro';
 import {siteConfig, profiles} from '../data/site';
 ---
 
-<section id="top" aria-label="Introduction" class="page-section flex flex-col gap-9 pt-14 lg:gap-14 lg:pt-32">
-  <div class="flex max-w-[1120px] flex-col gap-4 lg:gap-6">
-    <h1 class="text-4xl/[1.1] font-medium tracking-[-0.03em] text-balance md:text-5xl/[1.1] lg:text-[64px] lg:leading-[1.06]">
-      Fullstack developer with a frontend focus.
-    </h1>
-    <p class="max-w-[34ch] text-xl/[1.4] tracking-[-0.01em] text-pretty text-muted md:text-2xl/[1.4] lg:text-[30px]/[1.35]">
+<section id="top" aria-label="Introduction" class="page-section pt-16 pb-20 lg:pt-38 lg:pb-32">
+  <p class="mb-6 font-mono text-[13px] text-faint"># {siteConfig.name} · {siteConfig.role} · {siteConfig.location}</p>
+  <TypedHeading
+    as="h1"
+    text="Fullstack developer with a frontend focus."
+    class="max-w-[18ch] text-[40px]/[1.05] font-medium tracking-[-0.035em] text-balance md:text-6xl/[1.05] lg:text-[76px]/[1.05]"
+  />
+  <div data-reveal class="mt-8 flex flex-col gap-10">
+    <p class="max-w-[34ch] text-xl/[1.4] tracking-[-0.01em] text-pretty text-muted md:text-2xl/[1.4] lg:text-[28px]/[1.4]">
       I lead frontend on <a href="https://climbalong.com/">ClimbAlong</a> at Northtech, building fast, well-made web products from Denmark.
     </p>
-  </div>
-  <div class="flex flex-col items-start gap-3.5 text-[17px] font-medium md:flex-row md:gap-9 lg:text-[19px]">
-    <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-    {
-      [profiles.linkedin, profiles.github].map(({label, href}) => (
-        <a href={href} target="_blank" rel="me noopener noreferrer">
-          {label}
-        </a>
-      ))
-    }
+    <div class="flex flex-wrap gap-x-9 gap-y-3 font-medium">
+      <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+      {
+        [profiles.linkedin, profiles.github].map(({label, href}) => (
+          <a href={href} target="_blank" rel="me noopener noreferrer">
+            {label}
+          </a>
+        ))
+      }
+    </div>
   </div>
 </section>

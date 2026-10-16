@@ -1,0 +1,37 @@
+---
+import TypedHeading from './TypedHeading.astro';
+
+interface Props {
+  heading: string;
+  as?: 'article' | 'section';
+  id?: string;
+  size?: 'md' | 'lg';
+  class?: string;
+}
+
+const {heading, as: Tag = 'article', id, size = 'md', class: className} = Astro.props;
+const headingId = id && `${id}-heading`;
+---
+
+<Tag
+  id={id}
+  aria-labelledby={headingId}
+  class:list={['page-section section-grid gap-4 border-t border-rule md:gap-12', className]}>
+  <div class="flex flex-col gap-1.5 font-mono text-[13px] text-faint md:pt-2.5">
+    <slot name="meta" />
+  </div>
+  <div class="min-w-0">
+    <TypedHeading
+      text={heading}
+      id={headingId}
+      class:list={[
+        'font-medium',
+        size === 'md' && 'mb-4 text-2xl/[1.2] tracking-[-0.02em] md:text-[32px]',
+        size === 'lg' && 'mb-6 text-3xl/[1.15] tracking-[-0.03em] lg:text-[44px]',
+      ]}
+    />
+    <div data-reveal class="flex flex-col gap-5">
+      <slot />
+    </div>
+  </div>
+</Tag>

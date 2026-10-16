@@ -26,14 +26,18 @@ export function profileMarkdown({includeLinks = false} = {}) {
     '## Projects',
     list(
       projects.map(
-        (project) => `[${project.title}](${project.url}): ${project.type}. ${project.description} Stack: ${project.stack}.`,
+        (project) => `[${project.title}](${project.url}): ${project.type}. ${project.description} Stack: ${project.stack.join(', ')}.`,
       ),
     ),
     '## Work',
     workSummary,
-    list(roles.map((role) => `${role.date}: ${role.title}. ${role.description}`)),
+    list(roles.map((role) => `${role.date}: ${role.title}. ${role.changes.map((change) => change.text).join(' ')}`)),
     '## Tools',
-    [tools.daily, tools.sideProjects, tools.exploring].join('\n\n'),
+    list([
+      `Most days: ${tools.daily.join(', ')}`,
+      `Side projects: ${tools.sideProjects.join(', ')}`,
+      `Exploring: ${tools.exploring}`,
+    ]),
     '## About',
     [`${about.intro} ${about.focus}`, about.interests].join('\n\n'),
     '## Contact',

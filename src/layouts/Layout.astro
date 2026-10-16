@@ -1,5 +1,6 @@
 ---
 import '../assets/app.css';
+import Entry from '../components/Entry.astro';
 import {siteConfig, profiles} from '../data/site';
 import {projects} from '../data/projects';
 
@@ -152,15 +153,21 @@ const schema = {
     <meta name="twitter:creator" content="@magnus_granno" />
 
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <!-- Runs before paint so headings start hidden instead of flashing in full. -->
+    <script is:inline>
+      if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('typing');
+      }
+    </script>
   </head>
-  <body class="bg-ground text-ink font-sans antialiased">
-    <header class="page-shell flex h-18 items-center justify-between text-base font-medium lg:h-26 lg:text-[17px]">
-      <a class="quiet tracking-[-0.01em]" href="#top">{siteConfig.name}</a>
-      <nav aria-label="Sections" class="flex gap-5 lg:gap-10">
-        <a class="quiet" href="#projects">Projects</a>
-        <a class="quiet" href="#work">Work</a>
-        <a class="quiet max-md:hidden" href="#about">About</a>
-        <a class="quiet" href={`mailto:${siteConfig.email}`}>Email</a>
+  <body class="bg-ground text-ink font-sans text-lg/relaxed antialiased">
+    <header
+      class="page-shell flex flex-wrap items-center justify-between gap-4 border-b border-rule py-7 font-mono text-[13px] text-muted">
+      <a class="quiet" href="#top">magnusgranno.com <span class="text-faint">/</span> <span class="text-ink">CHANGELOG.md</span></a>
+      <nav aria-label="Sections" class="flex flex-wrap gap-x-6 gap-y-2">
+        <a class="quiet" href="#releases">Releases</a>
+        <a class="quiet" href="#side">Side projects</a>
+        <a class="quiet" href="#deps">Dependencies</a>
       </nav>
     </header>
 
@@ -169,26 +176,26 @@ const schema = {
     </main>
 
     <footer class="page-shell pb-10 lg:pb-16">
-      <div class="flex flex-col gap-10 border-t border-rule pt-8 lg:gap-16 lg:pt-12">
-        <p class="max-w-[900px] text-3xl/[1.15] font-medium tracking-[-0.025em] lg:text-[44px] lg:leading-[1.12]">
-          Have a project in mind? Write to <a class="wrap-anywhere" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-        </p>
-        <div
-          class="flex flex-col-reverse gap-4 text-[15px] text-muted md:flex-row md:items-center md:justify-between lg:text-base">
-          <p>&copy; {new Date().getFullYear()} {siteConfig.name}</p>
-          <ul class="flex flex-wrap gap-x-6 gap-y-2 lg:gap-x-8" aria-label="Profiles">
-            {
-              profileList.map(({label, href}) => (
-                <li>
-                  <a class="quiet" href={href} target="_blank" rel="me noopener noreferrer">
-                    {label}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      </div>
+      <Entry as="section" id="contact" heading="Open an issue, or just say hi." size="lg" class="pt-24 pb-18">
+        <span slot="meta">## contact</span>
+        <ul class="flex flex-wrap gap-x-9 gap-y-3 font-medium" aria-label="Contact and profiles">
+          <li><a class="wrap-anywhere" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
+          {
+            profileList.map(({label, href}) => (
+              <li>
+                <a href={href} target="_blank" rel="me noopener noreferrer">
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </Entry>
+      <p class="font-mono text-[13px] text-faint">&copy; {new Date().getFullYear()} {siteConfig.name}</p>
     </footer>
+
+    <script>
+      import '../scripts/motion';
+    </script>
   </body>
 </html>

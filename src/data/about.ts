@@ -7,11 +7,15 @@ export function getAge(today = new Date()) {
   return hadBirthdayThisYear ? age : age - 1;
 }
 
+const pad = (value: number) => String(value).padStart(2, '0');
+
+/** ISO date of the "initial release", e.g. 1997-07-04. */
+export const birthDate = `${BIRTH_DATE.year}-${pad(BIRTH_DATE.monthIndex + 1)}-${pad(BIRTH_DATE.day)}`;
+
 export const tools = {
-  daily: 'Most days I write TypeScript and Angular on the frontend, with Java and Spring Boot on PostgreSQL behind it.',
-  sideProjects:
-    'On side projects I reach for SvelteKit, React and React Native, Hono, Node.js, Tailwind CSS, PostgreSQL and Docker.',
-  exploring: 'Right now I am exploring how AI can sharpen my development work, from faster iteration to better reviews.',
+  daily: ['TypeScript', 'Angular', 'Java', 'Spring Boot', 'PostgreSQL'],
+  sideProjects: ['SvelteKit', 'React', 'React Native', 'Hono', 'Node.js', 'Tailwind CSS', 'PostgreSQL', 'Docker'],
+  exploring: 'How agents can sharpen my development work, from faster iteration to better reviews.',
 };
 
 export const about = {

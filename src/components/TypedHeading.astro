@@ -1,0 +1,13 @@
+---
+interface Props {
+  text: string;
+  as?: 'h1' | 'h2';
+  id?: string;
+  class?: string;
+}
+
+const {text, as: Tag = 'h2', id, class: className} = Astro.props;
+---
+
+<!-- Kept on one line: whitespace between the spans would show up as gaps around the caret. -->
+<Tag id={id} class={className} data-typed={text}><span class="sr-only">{text}</span><span aria-hidden="true"><span data-typed-done></span><span class="caret"></span><span data-typed-rest>{text}</span></span></Tag>

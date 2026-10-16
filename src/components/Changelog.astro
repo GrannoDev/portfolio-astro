@@ -1,0 +1,60 @@
+---
+import Entry from './Entry.astro';
+import ChangeRow from './ChangeRow.astro';
+import {roles} from '../data/work';
+import {about, birthDate, tools} from '../data/about';
+import {packageName} from '../lib/package-name';
+---
+
+<section id="releases" aria-label="Releases" class="page-section">
+  <Entry heading="Sharpening the workflow with agents" class="py-12">
+    <Fragment slot="meta">
+      <span class="text-accent">[Unreleased]</span>
+      <span>in progress</span>
+    </Fragment>
+    <ChangeRow label="Exploring"><p>{tools.exploring}</p></ChangeRow>
+  </Entry>
+
+  {
+    roles.map((role) => (
+      <Entry heading={role.title} class="py-12">
+        <Fragment slot="meta">
+          <span class="text-accent">{role.version}</span>
+          <span>{role.date}</span>
+        </Fragment>
+        {role.changes.map((change) => (
+          <ChangeRow label={change.kind}>
+            <p>{change.text}</p>
+          </ChangeRow>
+        ))}
+        {role.shipped && (
+          <ChangeRow label="Shipped">
+            <ul class="flex flex-col gap-5">
+              {role.shipped.map((project) => (
+                <li class="flex flex-col gap-1">
+                  <a href={project.url} target="_blank" rel="noopener noreferrer" class="self-start font-medium text-ink">
+                    {project.title}
+                  </a>
+                  <span>{project.description}</span>
+                  <span class="font-mono text-[13px] text-faint">{project.stack.map(packageName).join(' · ')}</span>
+                </li>
+              ))}
+            </ul>
+          </ChangeRow>
+        )}
+      </Entry>
+    ))
+  }
+
+  <Entry heading="Initial release" class="py-12">
+    <Fragment slot="meta">
+      <span class="text-accent">v0.1.0</span>
+      <time datetime={birthDate}>{birthDate}</time>
+    </Fragment>
+    <div class="flex max-w-[62ch] flex-col gap-3 text-body">
+      <p>{about.intro}</p>
+      <p>{about.focus}</p>
+      <p class="text-muted">{about.interests}</p>
+    </div>
+  </Entry>
+</section>
